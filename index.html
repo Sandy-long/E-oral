@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英语学习思维导图</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .mindmap-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+        }
+        
+        .main-title {
+            text-align: center;
+            color: #4285F4;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .mindmap-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .mindmap-container {
+            flex: 0 0 calc(50% - 15px);
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            min-width: 400px;
+            box-sizing: border-box;
+        }
+        
+        .central-node {
+            width: 200px;
+            padding: 20px;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            margin-right: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .central-title {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        
+        .central-subtitle {
+            font-size: 16px;
+            text-align: center;
+            opacity: 0.9;
+        }
+        
+        .branch-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex-grow: 1;
+        }
+        
+        .branch {
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .branch:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .branch::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 20px;
+            height: 2px;
+            background: #B8C2CC;
+        }
+        
+        .branch-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #2D3748;
+        }
+        
+        .phrase {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 992px) {
+            .mindmap-row {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .mindmap-container {
+                width: 100%;
+                flex: 0 0 100%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mindmap-container {
+                flex-direction: column;
+                min-width: auto;
+            }
+            
+            .central-node {
+                width: auto;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .branch::before {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mindmap-wrapper">
+        <h1 class="main-title">英语口语</h1>
+        
+        <!-- 第一行 -->
+        <div class="mindmap-row">
+            <!-- 自我介绍模块 -->
+            <div class="mindmap-container">
+                <div class="central-node" style="background: #4285F4;">
+                    <div class="central-title">自我介绍</div>
+                    <div class="central-subtitle">Self-Introduction</div>
+                </div>
+                
+                <div class="branch-container">
+                    <div class="branch" id="greeting">
+                        <div class="branch-title">问候 Greetings</div>
+                        <div class="phrase">Hello / Hi</div>
+                        <div class="phrase">Good morning</div>
+                        <div class="phrase">How are you?</div>
+                    </div>
+                    
+                    <div class="branch" id="name">
+                        <div class="branch-title">姓名 Name</div>
+                        <div class="phrase">My name is...</div>
+                        <div class="phrase">I'm...</div>
+                    </div>
+                    
+                    <div class="branch" id="location">
+                        <div class="branch-title">地方与居住地 Location</div>
+                        <div class="phrase">I'm from...</div>
+                        <div class="phrase">I live in...</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 兴趣爱好模块 -->
+            <div class="mindmap-container">
+                <div class="central-node" style="background: #EA4335;">
+                    <div class="central-title">兴趣爱好</div>
+                    <div class="central-subtitle">Hobbies</div>
+                </div>
+                
+                <div class="branch-container">
+                    <div class="branch" id="indoor">
+                        <div class="branch-title">室内活动 Indoor</div>
+                        <div class="phrase">Reading books</div>
+                        <div class="phrase">Watching movies</div>
+                        <div class="phrase">Playing video games</div>
+                    </div>
+                    
+                    <div class="branch" id="sports">
+                        <div class="branch-title">运动 Sports</div>
+                        <div class="phrase">Basketball</div>
+                        <div class="phrase">Swimming</div>
+                        <div class="phrase">Running</div>
+                    </div>
+                    
+                    <div class="branch" id="social">
+                        <div class="branch-title">社交活动 Social</div>
+                        <div class="phrase">Going to parties</div>
+                        <div class="phrase">Meeting friends</div>
+                        <div class="phrase">Traveling</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第二行 -->
+        <div class="mindmap-row">
+            <!-- 购物专题模块 -->
+            <div class="mindmap-container">
+                <div class="central-node" style="background: #34A853;">
+                    <div class="central-title">购物专题</div>
+                    <div class="central-subtitle">Shopping</div>
+                </div>
+                
+                <div class="branch-container">
+                    <div class="branch" id="shopping-vocab">
+                        <div class="branch-title">购物词汇 Vocabulary</div>
+                        <div class="phrase">Supermarket / Mall</div>
+                        <div class="phrase">Cashier / Checkout</div>
+                        <div class="phrase">Price / Discount</div>
+                        <div class="phrase">Receipt / Change</div>
+                    </div>
+                    
+                    <div class="branch" id="shopping-expressions">
+                        <div class="branch-title">购物表达 Expressions</div>
+                        <div class="phrase">How much is this?</div>
+                        <div class="phrase">Do you accept credit cards?</div>
+                        <div class="phrase">Where can I find...?</div>
+                        <div class="phrase">I'm just looking, thanks</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 餐饮专题模块 -->
+            <div class="mindmap-container">
+                <div class="central-node" style="background: #FBBC05;">
+                    <div class="central-title">餐饮专题</div>
+                    <div class="central-subtitle">Dining</div>
+                </div>
+                
+                <div class="branch-container">
+                    <div class="branch" id="dining-vocab">
+                        <div class="branch-title">餐饮词汇 Vocabulary</div>
+                        <div class="phrase">Restaurant / Cafe</div>
+                        <div class="phrase">Menu / Order</div>
+                        <div class="phrase">Appetizer / Main course</div>
+                        <div class="phrase">Bill / Tip</div>
+                    </div>
+                    
+                    <div class="branch" id="ordering-food">
+                        <div class="branch-title">叫餐 Ordering Food</div>
+                        <div class="phrase">I'd like to order...</div>
+                        <div class="phrase">Could I have the menu?</div>
+                        <div class="phrase">Is this dish spicy?</div>
+                        <div class="phrase">Check, please</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第三行 -->
+        <div class="mindmap-row">
+            <!-- 社交专题模块 -->
+            <div class="mindmap-container">
+                <div class="central-node" style="background: #673AB7;">
+                    <div class="central-title">社交专题</div>
+                    <div class="central-subtitle">Social</div>
+                </div>
+                
+                <div class="branch-container">
+                    <div class="branch" id="social-expressions">
+                        <div class="branch-title">社交表达 Expressions</div>
+                        <div class="phrase">Nice to meet you</div>
+                        <div class="phrase">What do you do?</div>
+                        <div class="phrase">How's your family?</div>
+                        <div class="phrase">Let's keep in touch</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 旅游专题模块 -->
+            <div class="mindmap-container">
+                <div class="central-node" style="background: #FF5722;">
+                    <div class="central-title">旅游专题</div>
+                    <div class="central-subtitle">Travel</div>
+                </div>
+                
+                <div class="branch-container">
+                    <div class="branch" id="travel-vocab">
+                        <div class="branch-title">旅游词汇 Vocabulary</div>
+                        <div class="phrase">Passport / Visa</div>
+                        <div class="phrase">Sightseeing / Attraction</div>
+                        <div class="phrase">Guide / Map</div>
+                    </div>
+                    
+                    <div class="branch" id="flight">
+                        <div class="branch-title">航班 Flight</div>
+                        <div class="phrase">Boarding pass</div>
+                        <div class="phrase">Departure / Arrival</div>
+                        <div class="phrase">Check-in / Boarding</div>
+                    </div>
+                    
+                    <div class="branch" id="in-flight">
+                        <div class="branch-title">机上服务 In-flight</div>
+                        <div class="phrase">Window / Aisle seat</div>
+                        <div class="phrase">Blanket / Pillow</div>
+                        <div class="phrase">Meal service</div>
+                    </div>
+                    
+                    <div class="branch" id="customs">
+                        <div class="branch-title">过海关 Customs</div>
+                        <div class="phrase">Declaration form</div>
+                        <div class="phrase">Nothing to declare</div>
+                        <div class="phrase">Purpose of visit</div>
+                    </div>
+                    
+                    <div class="branch" id="hotel">
+                        <div class="branch-title">入住酒店 Hotel</div>
+                        <div class="phrase">Reservation</div>
+                        <div class="phrase">Check-in / Check-out</div>
+                        <div class="phrase">Room service</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 第四行 -->
+        <div class="mindmap-row">
+            <!-- 校园生活专题模块 -->
+            <div class="mindmap-container">
+                <div class="central-node" style="background: #009688;">
+                    <div class="central-title">校园生活</div>
+                    <div class="central-subtitle">Campus Life</div>
+                </div>
+                
+                <div class="branch-container">
+                    <div class="branch" id="campus-vocab">
+                        <div class="branch-title">校园词汇 Vocabulary</div>
+                        <div class="phrase">Dormitory / Classroom</div>
+                        <div class="phrase">Library / Laboratory</div>
+                        <div class="phrase">Professor / Classmate</div>
+                    </div>
+                    
+                    <div class="branch" id="campus-conversation">
+                        <div class="branch-title">校园日常对话</div>
+                        <div class="phrase">When is the exam?</div>
+                        <div class="phrase">Where is the library?</div>
+                        <div class="phrase">Can I borrow your notes?</div>
+                        <div class="phrase">What's the homework?</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 预留空白模块 -->
+            <div class="mindmap-container" style="visibility: hidden;">
+                <!-- 这里留空作为占位 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 生成随机颜色
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+        // 为分支设置随机颜色
+        function setRandomColors() {
+            const branches = document.querySelectorAll('.branch');
+            
+            branches.forEach(branch => {
+                const color = getRandomColor();
+                branch.style.backgroundColor = `${color}20`;
+                branch.style.borderLeft = `4px solid ${color}`;
+            });
+        }
+        
+        // 页面加载时设置随机颜色
+        window.addEventListener('load', setRandomColors);
+        
+        // 点击分支可以重新随机颜色
+        document.querySelectorAll('.branch').forEach(branch => {
+            branch.addEventListener('click', function() {
+                const color = getRandomColor();
+                this.style.backgroundColor = `${color}20`;
+                this.style.borderLeft = `4px solid ${color}`;
+            });
+        });
+    </script>
+</body>
+</html>
